@@ -7,10 +7,16 @@ import java.nio.file.Path;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * Class for words
+ */
 public class Words {
     private List<String> words;
     private static final String WORDS_FILE = "words.txt";
 
+    /**
+     * Constructor for Words
+     */
     public Words() {
         try {
             words = Files.readAllLines(Path.of(WORDS_FILE))
@@ -24,6 +30,11 @@ public class Words {
         }
     }
 
+    /**
+     * Gets random word
+     *
+     * @return random word
+     */
     public String getRandomWord() {
         if (words.isEmpty()) {
             throw new IllegalStateException("Список слов пуст, загадывать нечего :(");

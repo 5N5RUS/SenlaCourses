@@ -5,6 +5,9 @@ import lombok.Getter;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Class for Hangman
+ */
 @Getter
 public class Hangman {
     public static final String ANSI_RED = "\u001B[31m";
@@ -16,15 +19,31 @@ public class Hangman {
     private final Set<Character> guessedLetters = new HashSet<>();
     private int lives;
 
+    /**
+     * Constructor for Hangman
+     *
+     * @param word  word
+     * @param lives lives
+     */
     public Hangman(String word, int lives) {
         this.word = word;
         this.lives = lives;
     }
 
+    /**
+     * Checks if game is over
+     *
+     * @return true if game is over
+     */
     public boolean isGameOver() {
         return lives <= 0 || isWordGuessed();
     }
 
+    /**
+     * Checks if word is guessed
+     *
+     * @return true if word is guessed
+     */
     public boolean isWordGuessed() {
         for (char c : word.toCharArray()) {
             if (!guessedLetters.contains(c)) {
@@ -34,6 +53,12 @@ public class Hangman {
         return true;
     }
 
+    /**
+     * Guesses letter
+     *
+     * @param letter letter
+     * @return true if letter is guessed
+     */
     public boolean guess(char letter) {
 
         if (guessedLetters.contains(letter)) {
@@ -56,6 +81,11 @@ public class Hangman {
         return true;
     }
 
+    /**
+     * Gets current word progress
+     *
+     * @return current word progress
+     */
     public String getCurrentProgress() {
         StringBuilder progress = new StringBuilder();
         for (char c : word.toCharArray()) {
@@ -68,6 +98,9 @@ public class Hangman {
         return progress.toString().trim();
     }
 
+    /**
+     * Prints hangman stage
+     */
     public void printHangman() {
         String[] hangmanStages = {
                 """
