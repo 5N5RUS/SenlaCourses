@@ -5,15 +5,13 @@ import lombok.Getter;
 import java.util.HashSet;
 import java.util.Set;
 
+import static it.senla.Colors.*;
+
 /**
  * Class for Hangman
  */
 @Getter
 public class Hangman {
-    public static final String ANSI_RED = "\u001B[31m";
-    public static final String ANSI_GREEN = "\u001B[32m";
-    public static final String ANSI_CYAN = "\u001B[36m";
-    public static final String ANSI_RESET = "\u001B[0m";
     public static final int MAX_LIVES = 6;
     private final String word;
     private final Set<Character> guessedLetters = new HashSet<>();

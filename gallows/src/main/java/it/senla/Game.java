@@ -2,11 +2,11 @@ package it.senla;
 
 import java.util.Scanner;
 
+import static it.senla.Colors.ANSI_CYAN;
+import static it.senla.Colors.ANSI_GREEN;
+import static it.senla.Colors.ANSI_RED;
+import static it.senla.Colors.ANSI_RESET;
 import static it.senla.Hangman.MAX_LIVES;
-import static it.senla.Hangman.ANSI_RED;
-import static it.senla.Hangman.ANSI_CYAN;
-import static it.senla.Hangman.ANSI_GREEN;
-import static it.senla.Hangman.ANSI_RESET;
 
 /**
  * Main class for Hangman game
